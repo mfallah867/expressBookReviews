@@ -27,7 +27,6 @@ const authenticatedUser = (username, password) => {
 
 //only registered users can login
 regd_users.post('/login', (req, res) => {
-	//Write your code here
 	const { username, password } = req.body;
 
 	if (!username || !password) {
@@ -77,7 +76,9 @@ regd_users.put('/auth/review/:isbn', (req, res) => {
 	//If review doesn't exist
 	if (!book.reviews[username]) {
 		book.reviews[username] = review;
-		return res.status(201).json({ message: 'Review successfuly added' });
+		return res
+			.status(201)
+			.json({ message: 'Review successfuly added/updated' });
 	}
 
 	//If review exist
