@@ -4,6 +4,12 @@ let books = require('./booksdb.js');
 let isValid = require('./auth_users.js').isValid;
 let users = require('./auth_users.js').users;
 
+/*
+Please note that I kept synchronous route for retrieve books based on
+a criteria, but add a new route for retrieve books asynchronously
+(associated with task from 10 to 13)
+*/
+
 const public_users = express.Router();
 
 public_users.post('/register', (req, res) => {
